@@ -1,0 +1,15 @@
+.cart-cnt {
+  background-color: #e9ebeb;
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+.total-price {
+  margin: 0 auto;
+  text-align: right;
+}
+
+.empty-cart {
+  text-align: center;
+  margin-top: 4rem;
+}

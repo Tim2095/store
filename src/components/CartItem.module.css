@@ -1,0 +1,23 @@
+.cart-cnt {
+  background-color: #fff;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+} 
+
+.cart-heading {
+  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.cart-product-price {
+  display: flex;
+  justify-content: space-around;
+}
+
+.amount-btn {
+  display: flex;
+  gap: 2rem;
+}
