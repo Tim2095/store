@@ -25,3 +25,7 @@
 .title, .price, .amount {
   font-size: 1.4rem;
 }
+
+.title {
+  justify-self: start;
+}
