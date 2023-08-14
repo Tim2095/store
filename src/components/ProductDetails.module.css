@@ -16,4 +16,9 @@
 
 .product-desc {
   max-width: 50%;
+  font-size: 1.4rem;
+}
+
+.description, .price, .title {
+  font-size: 1.4rem;
 }

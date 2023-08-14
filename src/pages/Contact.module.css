@@ -1,0 +1,39 @@
+.form {
+  max-width: 50%;
+  margin: 0 auto;
+  background-color: #e9ebeb;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding: 4rem;
+}
+
+.form div {
+  width: 80%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  padding: 1rem;
+}
+
+.form label {
+  font-size: 2rem;
+}
+
+.submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit button {
+  padding: 1rem 2rem;
+  background-color: aquamarine;
+  border: none;
+  cursor: pointer;
+}

@@ -7,9 +7,11 @@
 .total-price {
   margin: 0 auto;
   text-align: right;
+  font-size: 1.4rem;
 }
 
 .empty-cart {
   text-align: center;
   margin-top: 4rem;
 }
+

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const MainNavigation = () => {
-  const cartAmount = useSelector(state => state.cart.totalAmount)
+  const cartAmount = useSelector(state => state.cart.items.length)
 
   return (
     <header>

@@ -4,9 +4,10 @@ import RootLayout from "./layout/RootLayout";
 import Products, { loader as productLoader } from "./components/Products";
 import Services from "./pages/Services";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Contact, { formAction } from "./pages/Contact";
 import Cart from "./components/Cart";
 import ProductDetails from "./components/ProductDetails";
+import SubmittedForm from "./pages/SubmittedForm";
 
 function App() {
   const router = createBrowserRouter([
@@ -25,7 +26,7 @@ function App() {
         },
         {
           path: 'products/:productId',
-          element: <ProductDetails />
+          element: <ProductDetails />,
         },
         {
           path: "services",
@@ -38,6 +39,11 @@ function App() {
         {
           path: "contact",
           element: <Contact />,
+          action: formAction,
+        },
+        {
+          path: 'submitted-form',
+          element: <SubmittedForm />
         },
         {
           path: "cart",

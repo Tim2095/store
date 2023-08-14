@@ -12,19 +12,24 @@ const CartItem = ({ title, price, amount, id }) => {
     }
     dispatch(cartActions.addToCart(newItem))
   }
+
+  const removeItemHandler = () => {
+    dispatch(cartActions.removeItem(id))
+  }
+
   return (
     <div className={classes["cart-cnt"] + " container"}>
       <div className={classes["cart-heading"]}>
-        <p>{title}</p>
-        <div>{amount}</div>
+        <p className={classes.title}>{title}</p>
+        <div className={classes.amount}>{amount}</div>
         <div className={classes["amount-btn"]}>
           <button onClick={addItemHandler}>+</button>
-          <button>-</button>
+          <button onClick={removeItemHandler}>-</button>
         </div>
       </div>
       <div className={classes['cart-product-price']}>
-        <h4>Price</h4>
-        <p>{price}$</p>
+        <h4 className={classes.price}>Price</h4>
+        <p className={classes.price}>{price}$</p>
       </div>
     </div>
   );

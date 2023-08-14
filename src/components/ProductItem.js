@@ -2,9 +2,9 @@ import classes from "./ProductItem.module.css";
 import { cartActions } from "../store/cart-slice";
 import { useDispatch, } from "react-redux";
 import { Link } from "react-router-dom";
+import AddBtn from "../ui/AddBtn";
 const ProductItem = ({ title, price, image, id }) => {
   const dispatch = useDispatch();
-
   // const cartState = useSelector((state) => state);
  
   const addItemHandler = () => {
@@ -26,11 +26,12 @@ const ProductItem = ({ title, price, image, id }) => {
         </Link>
       </div>
       <div className={classes["product-details"]}>
-        <Link to={`${id}`}><p>{title}</p></Link>
-        <div>{price}</div>
+        <Link to={`${id}`}><p className={classes.title}>{title}</p></Link>
+        <div className={classes.price}>{price} $</div>
       </div>
       <div className={classes["add-btn"]}>
-        <button onClick={addItemHandler}>Add</button>
+        {/* <button onClick={addItemHandler}>Add</button> */}
+        <AddBtn text="add" onClick={addItemHandler} />
       </div>
     </div>
   );

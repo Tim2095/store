@@ -2,16 +2,27 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 import classes from './ProductDetails.module.css'
-import { useSelector } from 'react-redux'
+import AddBtn from '../ui/AddBtn'
+import { useDispatch } from 'react-redux'
+import { cartActions } from '../store/cart-slice'
 
 
 const ProductDetails = () => {
-  const cart = useSelector((cart) => cart.cart )
-  console.log(cart.items)
+
+  const dispatch = useDispatch()
   const [product, setProduct]= useState({})
   const params = useParams()
   const productId = params.productId
 
+  const addProductHandler = () => {
+    const newItem = {
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      amount: 1
+    }
+    dispatch(cartActions.addToCart(newItem))
+  }
 
   useEffect(() => {
     const currentProducts = async() => {
@@ -28,15 +39,15 @@ const ProductDetails = () => {
     }
 
     currentProducts()
-  }, []) 
+  }, [productId]) 
 
   return (
     <div className={classes.product + ' container'}>
       <img className={classes['product-img']} src={product.productImg} alt='product' /> 
-      <h2>{product.title}</h2>
+      <h2 className={classes.title}>{product.title}</h2>
       <p className={classes['product-desc']}>{product.description}</p>
-      <p>{product.price}</p>
-      <button>Add to cart</button>
+      <p className={classes.price}>{product.price} $</p>
+      <AddBtn btnClass="add-cart-btn" text="add" onClick={addProductHandler} />
     </div>
   )
 }
